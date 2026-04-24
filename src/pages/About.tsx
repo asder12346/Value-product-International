@@ -66,6 +66,34 @@ export function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <section className="container mx-auto px-4 max-w-5xl mt-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold uppercase tracking-tight">Why Choose Us?</h2>
+          <div className="w-16 h-1 bg-emerald-500 mx-auto mt-6"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-8 border border-slate-200 rounded bg-white flex flex-col h-full hover:border-emerald-500 transition-colors">
+            <h3 className="font-bold text-lg mb-4 text-slate-900">Quality Assurance</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Every product undergoes rigorous quality checks to ensure it meets our high standards.
+            </p>
+          </div>
+          <div className="p-8 border border-slate-200 rounded bg-white flex flex-col h-full hover:border-emerald-500 transition-colors">
+            <h3 className="font-bold text-lg mb-4 text-slate-900">Customer First</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              We prioritize your satisfaction with exceptional service and support.
+            </p>
+          </div>
+          <div className="p-8 border border-slate-200 rounded bg-white flex flex-col h-full hover:border-emerald-500 transition-colors">
+            <h3 className="font-bold text-lg mb-4 text-slate-900">Global Network</h3>
+            <p className="text-slate-600 text-sm leading-relaxed">
+              We leverage our extensive network to bring you the best products worldwide.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
