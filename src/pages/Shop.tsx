@@ -73,36 +73,37 @@ export function ShopPage() {
           </Button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="group flex flex-col bg-white border border-slate-200 rounded p-4 cursor-pointer relative">
+            <div key={product.id} className="group flex flex-col bg-white border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer overflow-hidden rounded-sm relative shadow-sm">
                {product.stock < 10 && product.stock > 0 && (
-                <span className="absolute top-6 left-6 z-10 bg-rose-100 text-rose-700 text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                <span className="absolute top-2 left-2 z-20 bg-rose-100 text-rose-700 text-[9px] font-bold px-2 py-1 rounded-sm uppercase tracking-widest">
                   Low Stock
                 </span>
                )}
                {product.stock === 0 && (
-                <span className="absolute top-6 left-6 z-10 bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                <span className="absolute top-2 left-2 z-20 bg-slate-900 text-white text-[9px] font-bold px-2 py-1 rounded-sm uppercase tracking-widest">
                   Out of Stock
                 </span>
                )}
-              <Link to={`/product/${product.id}`} className="w-full aspect-[4/3] bg-slate-100 rounded mb-4 flex items-center justify-center group-hover:bg-slate-200 transition-colors overflow-hidden block">
+              <Link to={`/product/${product.id}`} className="w-full aspect-square bg-slate-100 flex items-center justify-center relative overflow-hidden block shrink-0">
+                <div className="absolute inset-0 bg-slate-200 opacity-0 group-hover:opacity-20 transition-opacity z-0"></div>
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="object-cover w-full h-full mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity"
+                  className="object-cover w-full h-full mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:scale-105 duration-500 relative z-10"
                 />
               </Link>
-              <div className="flex-1 flex flex-col">
-                <p className="text-xs text-slate-400 font-bold uppercase mb-1 tracking-tighter">{product.category}</p>
+              <div className="flex flex-col p-4 border-t border-slate-100 bg-white flex-1">
+                <p className="text-[9px] text-slate-400 font-bold uppercase mb-1.5 tracking-[0.2em]">{product.category}</p>
                 <Link to={`/product/${product.id}`}>
-                  <h3 className="font-bold text-sm mb-1 group-hover:text-emerald-600 line-clamp-1 transition-colors">{product.name}</h3>
+                  <h3 className="font-bold text-sm mb-4 group-hover:text-emerald-600 line-clamp-1 leading-tight transition-colors text-slate-800">{product.name}</h3>
                 </Link>
-                <div className="mt-auto pt-2 flex items-center justify-between">
-                  <span className="font-bold text-slate-900">₦{product.price.toLocaleString()}</span>
+                <div className="mt-auto flex items-center justify-between">
+                  <span className="font-extrabold text-slate-900 text-sm">₦{product.price.toLocaleString()}</span>
                   <button 
                     disabled={product.stock === 0}
-                    className="p-1.5 bg-slate-900 text-white rounded-sm opacity-0 group-hover:opacity-100 transition-opacity disabled:opacity-50"
+                    className="w-8 h-8 flex items-center justify-center bg-slate-50 text-slate-400 border border-slate-200 rounded-sm group-hover:bg-slate-900 group-hover:text-white group-hover:border-slate-900 transition-colors disabled:opacity-50 disabled:group-hover:bg-slate-50 disabled:group-hover:text-slate-400 disabled:group-hover:border-slate-200"
                     onClick={(e) => {
                       e.preventDefault();
                       addToCart(product);

@@ -40,6 +40,7 @@ export const MOCK_PRODUCTS: Product[] = [
     category: "Fashion",
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800&auto=format&fit=crop",
     stock: 15,
+    featured: true,
   },
   {
     id: "4",

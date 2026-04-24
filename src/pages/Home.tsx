@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MOCK_PRODUCTS } from '../data';
 import { Button } from '../components/ui/button';
-import { ArrowRight, ShoppingCart, ShieldCheck, Truck, Headphones } from 'lucide-react';
+import { ArrowRight, ShoppingCart, ShieldCheck, Truck, Headphones, Mail, Phone, MapPin } from 'lucide-react';
 
 export function HomePage() {
   const featuredProducts = MOCK_PRODUCTS.filter((p) => p.featured).slice(0, 4);
@@ -9,21 +9,21 @@ export function HomePage() {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      <section className="h-[340px] bg-white flex flex-col md:flex-row overflow-hidden border-b border-slate-200">
-        <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center gap-4">
+      <section className="bg-white flex flex-col md:flex-row overflow-hidden border-b border-slate-200">
+        <div className="w-full md:w-1/2 p-8 lg:p-16 flex flex-col justify-center gap-4 relative z-10">
           <span className="text-emerald-600 font-bold tracking-widest text-xs uppercase">Spring Collection {new Date().getFullYear()}</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.1]">Shop Quality Products at Affordable Prices</h1>
-          <p className="text-slate-500 max-w-md">Discover our curated collection of premium accessories, electronics, and fashion items designed for your modern lifestyle.</p>
-          <div className="flex gap-3 mt-4">
-            <Link to="/shop">
-              <Button>Shop Now</Button>
+          <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.1] uppercase tracking-tight">Shop Quality Products at Affordable Prices</h1>
+          <p className="text-slate-500 max-w-md text-sm sm:text-base">Discover our curated collection of premium accessories, electronics, and fashion items designed for your modern lifestyle.</p>
+          <div className="flex gap-3 mt-6">
+            <Link to="/shop" className="flex-1 sm:flex-none">
+              <Button className="w-full sm:w-auto" size="lg">Shop Now</Button>
             </Link>
-            <Link to="/about">
-              <Button variant="outline">Learn More</Button>
+            <Link to="/about" className="flex-1 sm:flex-none">
+              <Button variant="outline" className="w-full sm:w-auto bg-white/80 backdrop-blur-sm" size="lg">Learn More</Button>
             </Link>
           </div>
         </div>
-        <div className="w-full md:w-1/2 bg-slate-100 flex items-center justify-center relative hidden md:flex">
+        <div className="w-full md:w-1/2 bg-slate-100 flex items-center justify-center relative md:flex py-12 md:py-0">
           <div className="absolute w-[400px] h-[400px] bg-emerald-500 rounded-full opacity-10"></div>
           <div className="z-10 bg-white p-8 rounded shadow-2xl rotate-2 border border-slate-200">
             <div className="w-64 h-48 bg-slate-200 flex items-center justify-center mb-4 rounded-sm overflow-hidden">
@@ -84,23 +84,26 @@ export function HomePage() {
           </Link>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
           {featuredProducts.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id} className="bg-white border border-slate-200 rounded p-3 flex flex-col group cursor-pointer hover:border-slate-300 transition-colors shadow-sm hover:shadow">
-              <div className="w-full aspect-square bg-slate-100 rounded-[2px] mb-3 flex items-center justify-center group-hover:bg-slate-200 transition-colors overflow-hidden">
+            <Link to={`/product/${product.id}`} key={product.id} className="group flex flex-col bg-white border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer overflow-hidden rounded-sm relative shadow-sm">
+              <div className="w-full aspect-square bg-slate-100 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-slate-200 opacity-0 group-hover:opacity-20 transition-opacity z-0"></div>
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="object-cover w-full h-full mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-300"
+                  className="object-cover w-full h-full mix-blend-multiply opacity-90 group-hover:opacity-100 group-hover:scale-105 duration-500 relative z-10"
                 />
               </div>
-              <div className="text-[10px] text-slate-400 font-bold uppercase mb-1 tracking-widest">{product.category}</div>
-              <div className="font-bold text-sm mb-1 group-hover:text-emerald-600 line-clamp-1 leading-tight">{product.name}</div>
-              <div className="flex justify-between items-center mt-auto pt-2 border-t border-slate-100">
-                <span className="font-bold text-slate-900 text-sm">₦{product.price.toLocaleString()}</span>
-                <button className="p-1.5 bg-slate-900 text-white rounded-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ShoppingCart className="w-4 h-4" />
-                </button>
+              <div className="flex flex-col p-4 border-t border-slate-100 bg-white">
+                <div className="text-[9px] text-slate-400 font-bold uppercase mb-1.5 tracking-[0.2em]">{product.category}</div>
+                <div className="font-bold text-sm mb-4 group-hover:text-emerald-600 line-clamp-1 leading-tight transition-colors text-slate-800">{product.name}</div>
+                <div className="flex justify-between items-center mt-auto">
+                  <span className="font-extrabold text-slate-900 text-sm">₦{product.price.toLocaleString()}</span>
+                  <div className="w-7 h-7 flex items-center justify-center bg-slate-50 text-slate-400 border border-slate-200 rounded-sm group-hover:bg-slate-900 group-hover:text-white group-hover:border-slate-900 transition-colors">
+                    <ShoppingCart className="w-3.5 h-3.5" />
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
@@ -129,30 +132,70 @@ export function HomePage() {
 
       {/* Contact Section */}
       <section className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto bg-white border border-slate-200 p-8 sm:p-12 rounded">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-extrabold uppercase tracking-tight text-slate-900">Get in Touch</h2>
-            <p className="text-slate-500 text-sm mt-2">Have a question? Our team is available to assist you.</p>
-          </div>
-          <form className="space-y-4 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold tracking-wider uppercase text-slate-700 mb-1">Name</label>
-                <input type="text" className="w-full h-10 px-3 border border-slate-200 rounded focus:outline-none focus:border-emerald-500 transition-colors text-sm" placeholder="Your Name" />
-              </div>
-              <div>
-                <label className="block text-xs font-bold tracking-wider uppercase text-slate-700 mb-1">Email</label>
-                <input type="email" className="w-full h-10 px-3 border border-slate-200 rounded focus:outline-none focus:border-emerald-500 transition-colors text-sm" placeholder="you@example.com" />
-              </div>
-            </div>
+        <div className="max-w-5xl mx-auto bg-white border border-slate-200 rounded flex flex-col md:flex-row overflow-hidden shadow-sm">
+          <div className="md:w-1/3 bg-slate-900 text-white p-8 sm:p-12 flex flex-col justify-between relative">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500 rounded-bl-full opacity-10"></div>
             <div>
-              <label className="block text-xs font-bold tracking-wider uppercase text-slate-700 mb-1">Message</label>
-              <textarea className="w-full h-32 p-3 border border-slate-200 rounded focus:outline-none focus:border-emerald-500 transition-colors text-sm resize-none" placeholder="How can we help?"></textarea>
+              <h2 className="text-2xl font-extrabold uppercase tracking-tight mb-2">Get in Touch</h2>
+              <p className="text-slate-400 text-sm mb-12">We'd love to hear from you. Our friendly team is always here to chat.</p>
+              
+              <div className="space-y-8">
+                 <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-sm bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700">
+                       <Mail className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                       <h3 className="font-bold text-xs uppercase tracking-widest mb-1 text-slate-300">Email</h3>
+                       <p className="text-white text-sm">support@valueproduct.com</p>
+                    </div>
+                 </div>
+                 <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-sm bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700">
+                       <Phone className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                       <h3 className="font-bold text-xs uppercase tracking-widest mb-1 text-slate-300">Phone</h3>
+                       <p className="text-white text-sm">+234 (0) 800 123 4567</p>
+                    </div>
+                 </div>
+                 <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-sm bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700">
+                       <MapPin className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                       <h3 className="font-bold text-xs uppercase tracking-widest mb-1 text-slate-300">Office</h3>
+                       <p className="text-white text-sm">123 Commerce Ave,<br/>Lagos, Nigeria</p>
+                    </div>
+                 </div>
+              </div>
             </div>
-            <div className="text-center pt-2">
-              <Button type="button" className="w-full sm:w-auto px-12">Submit Message</Button>
-            </div>
-          </form>
+          </div>
+          <div className="md:w-2/3 p-8 sm:p-12 bg-white">
+            <h3 className="text-xl font-bold text-slate-900 mb-6 uppercase tracking-tight">Send us a message</h3>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-2">First Name</label>
+                  <input type="text" className="w-full h-12 bg-slate-50 px-4 border border-slate-200 rounded-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors text-sm text-slate-900" placeholder="Jane" />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-2">Last Name</label>
+                  <input type="text" className="w-full h-12 bg-slate-50 px-4 border border-slate-200 rounded-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors text-sm text-slate-900" placeholder="Doe" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-2">Email Address</label>
+                <input type="email" className="w-full h-12 bg-slate-50 px-4 border border-slate-200 rounded-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors text-sm text-slate-900" placeholder="jane@example.com" />
+              </div>
+              <div>
+                <label className="block text-[10px] font-bold tracking-widest uppercase text-slate-500 mb-2">Message</label>
+                <textarea className="w-full h-32 bg-slate-50 p-4 border border-slate-200 rounded-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-colors text-sm resize-none text-slate-900" placeholder="How can we help you?"></textarea>
+              </div>
+              <div className="pt-2">
+                <Button type="button" size="lg" className="w-full">Send Message</Button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </div>
