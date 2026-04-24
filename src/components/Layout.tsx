@@ -1,7 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, LogIn, LogOut, ShieldAlert } from 'lucide-react';
 import { useAppStore } from '../store';
 import { Button } from './ui/button';
+import { Footer } from './ui/demo';
 
 export function Header() {
   const getCartCount = useAppStore((state) => state.getCartCount);
@@ -18,8 +20,11 @@ export function Header() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-10">
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-emerald-600 rounded-sm flex items-center justify-center text-white font-bold tracking-tighter">VPI</div>
-            <span className="font-bold text-xl tracking-tight uppercase text-slate-900 hidden sm:block">ValueProduct</span>
+            <div className="w-8 h-8 bg-emerald-600 rounded-sm flex items-center justify-center text-white font-bold tracking-tighter shrink-0">VPI</div>
+            <div className="flex flex-col hidden sm:flex">
+              <span className="font-bold text-xl tracking-tight uppercase text-slate-900 leading-none">ValueProduct</span>
+              <span className="text-[9px] tracking-[0.2em] text-emerald-600 uppercase font-bold leading-none mt-1">International</span>
+            </div>
           </Link>
           <nav className="hidden md:flex gap-6 text-sm font-medium text-slate-500">
             <Link to="/" className="hover:text-slate-900 py-5 transition-colors">Home</Link>
@@ -70,39 +75,9 @@ export function Header() {
   );
 }
 
-export function Footer() {
-  return (
-    <footer className="h-auto md:h-[104px] bg-slate-900 text-slate-400 p-8 flex flex-col md:flex-row items-start md:items-center justify-between flex-shrink-0 mt-auto gap-8 md:gap-0">
-      <div className="flex flex-col md:flex-row gap-8 md:gap-16 w-full md:w-auto">
-        <div>
-          <div className="text-white font-bold text-sm mb-1 uppercase tracking-widest">Contact</div>
-          <div className="text-[10px]">support@valueproduct.com</div>
-          <div className="text-[10px]">+234 (0) 800 123 4567</div>
-        </div>
-        <div>
-          <div className="text-white font-bold text-sm mb-1 uppercase tracking-widest">Policies</div>
-          <div className="text-[10px] flex gap-3 italic">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link to="/returns" className="hover:text-white transition-colors">Returns</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col items-start md:items-end w-full md:w-auto">
-        <div className="flex gap-4 mb-2">
-          <span className="text-[9px] uppercase font-bold text-slate-500 border border-slate-700 px-2 py-0.5 rounded">Paystack</span>
-          <span className="text-[9px] uppercase font-bold text-slate-500 border border-slate-700 px-2 py-0.5 rounded">Flutterwave</span>
-          <span className="text-[9px] uppercase font-bold text-slate-500 border border-slate-700 px-2 py-0.5 rounded">Stripe</span>
-        </div>
-        <p className="text-[10px]">&copy; {new Date().getFullYear()} Value Product International. All Rights Reserved.</p>
-      </div>
-    </footer>
-  );
-}
-
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-slate-50">
+    <div className="min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-background">
       <Header />
       <main className="flex-1">
         {children}
