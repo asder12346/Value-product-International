@@ -18,7 +18,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Experience silence with our industry-leading noise cancellation technology. Premium sound quality and comfortable fit for all-day listening.",
     price: 299000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/headphones",
     stock: 45,
     featured: true,
   },
@@ -28,7 +28,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Track your fitness, receive notifications, and look stylish with this sleek smart watch. Battery lasts up to 7 days.",
     price: 199500,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/smartwatch",
     stock: 20,
     featured: true,
   },
@@ -38,7 +38,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Durable and stylish. Perfect for daily commutes or weekend getaways. Features a padded laptop sleeve.",
     price: 89000,
     category: "Fashion",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/backpack",
     stock: 15,
     featured: true,
   },
@@ -48,7 +48,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Tactile feedback, RGB backlighting, and a compact design. The ultimate tool for developers and gamers.",
     price: 149000,
     category: "Accessories",
-    image: "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/keyboard",
     stock: 5,
     featured: true,
   },
@@ -58,7 +58,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Brew the perfect cup of coffee every morning with this elegant ceramic pour-over set.",
     price: 35000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/coffeemaker",
     stock: 100,
   },
   {
@@ -67,7 +67,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Fast-charge your devices without the clutter of cables. Sleek aluminum finish.",
     price: 45000,
     category: "Accessories",
-    image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/charger",
     stock: 30,
   },
   {
@@ -76,7 +76,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "High-performance laptop for productivity and gaming. Features a sleek design and extended battery life.",
     price: 350000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/laptop",
     stock: 25,
   },
   {
@@ -85,7 +85,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Lightweight and versatile tablet. Perfect for reading, browsing, and media consumption.",
     price: 150000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/tablet?lock=1",
     stock: 40,
   },
   {
@@ -94,7 +94,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Durable and weather-resistant tablet for outdoor and industrial use.",
     price: 180000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1505156868547-9b49f4df4e04?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/tablet?lock=2",
     stock: 12,
   },
   {
@@ -103,7 +103,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Next-generation smartphone with an advanced camera system and bezel-less display.",
     price: 120000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/smartphone",
     stock: 80,
   },
   {
@@ -112,7 +112,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Reliable 4G feature phone with long battery life and essential apps.",
     price: 25000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/cellphone",
     stock: 150,
   },
   {
@@ -121,7 +121,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Enhance your presentations and collaborative sessions with this responsive interactive display.",
     price: 850000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/monitor",
     stock: 8,
   },
   {
@@ -130,7 +130,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Crystal clear LED display perfect for digital signage and advertising.",
     price: 450000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1593305841991-0537e691678d?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/ledscreen",
     stock: 15,
   },
   {
@@ -139,7 +139,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Create massive, seamless video walls with high-definition LCD splicing panels.",
     price: 1200000,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/monitor?lock=1",
     stock: 5,
   },
   {
@@ -148,7 +148,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Compact 32-inch Smart TV with built-in streaming apps and HD resolution.",
     price: 130000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/television?lock=1",
     stock: 25,
   },
   {
@@ -157,7 +157,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Immersive 55-inch 4K Smart TV with HDR support and ultra-thin bezels.",
     price: 350000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/television?lock=2",
     stock: 18,
   },
   {
@@ -166,7 +166,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Energy-efficient double-door refrigerator with advanced cooling technology.",
     price: 280000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/refrigerator?lock=1",
     stock: 10,
   },
   {
@@ -175,7 +175,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Compact single-door refrigerator, perfect for small kitchens or offices.",
     price: 150000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1571175443880-49a1d4e97a48?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/refrigerator?lock=2",
     stock: 22,
   },
   {
@@ -184,7 +184,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Spacious multi-door refrigerator with smart temperature control and frost-free operation.",
     price: 450000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1605335133618-b2a6fdfaffad?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/refrigerator?lock=3",
     stock: 8,
   },
   {
@@ -193,7 +193,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Quiet and efficient split air conditioner for rapid room cooling.",
     price: 210000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1585935967915-05d8fcc5a960?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/airconditioner?lock=1",
     stock: 14,
   },
   {
@@ -202,7 +202,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Premium inverter air conditioner with smart Wi-Fi controls and air purification.",
     price: 290000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1628170284489-0ae6b701d81b?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/airconditioner?lock=2",
     stock: 11,
   },
   {
@@ -211,7 +211,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "High-capacity chest freezer with fast-freeze functionality and lock.",
     price: 240000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1581403588267-dc13972c4ed4?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/freezer",
     stock: 7,
   },
   {
@@ -220,7 +220,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Fully automatic front-loading washing machine with multiple wash programs.",
     price: 190000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/washingmachine",
     stock: 16,
   },
   {
@@ -229,7 +229,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Compact microwave oven with auto-cook menus and digital display.",
     price: 45000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1585807908358-1a9be7ce9c38?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/microwave",
     stock: 35,
   },
   {
@@ -238,7 +238,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Multi-purpose electric cooker for rice, steaming, and slow cooking.",
     price: 35000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1584824388162-817ab5363b9f?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/ricecooker",
     stock: 45,
   },
   {
@@ -247,7 +247,7 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Bright, weather-resistant solar street lamp with motion sensor. Energy efficient.",
     price: 65000,
     category: "Home & Tech",
-    image: "https://images.unsplash.com/photo-1517502695507-6bb9315570bc?q=80&w=800&auto=format&fit=crop",
+    image: "https://loremflickr.com/800/800/streetlamp",
     stock: 100,
   }
 ];
